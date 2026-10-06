@@ -1,0 +1,100 @@
+/* Apply a gradient background to the heading */
+.ding {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff5733, #ffbd33, #33ff57, #3380ff);
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+/* Add a glowing text shadow effect */
+.ding::after {
+    content: "your way, and passion";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 
+                 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Add a hover animation */
+.ding:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.king {
+    display: none;
+}
+
+.dark {
+    background-color: white;
+    color: black;
+    padding:10px;
+}
+.log {
+    background-color: black;
+    color: white;
+}
+
+#peter {
+    width: 200px;
+    height: 200px;
+    font-style: italic;
+    font-size: small;
+    background-color: lightblue;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+#floor {
+    width: 200px;
+    height: 200px;
+    font-style: italic;
+    font-size: small;
+    background-color: lightblue;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+#flower {
+    width:100px; 
+    height:100px;
+    font-size: small; 
+    background:lightblue;
+    display: inline-block;
+}
+
+#poddle {
+    width: 200px;
+    height: 200px;
+    font-style: italic;
+    font-size: small;
+    background-color: lightblue;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* after this i am trying to do some practise questions in there */
+
+
+.plot {
+    background-color: white;
+    color: black;
+    padding:10px;
+}
+.grapes {
+    background-color: black;
+    color: white;
+}
+
+body {
+    background-color: aliceblue;
+    
+}

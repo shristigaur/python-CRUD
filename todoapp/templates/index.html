@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        button {
+            padding: 10px 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #43a047;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li span.task-text {
+            font-size: 15px;
+            color: #333;
+        }
+
+        li s {
+            color: #999;
+        }
+
+        .actions a {
+            text-decoration: none;
+            margin-left: 12px;
+            font-size: 14px;
+        }
+
+        .actions a:first-child {
+            color: #2196F3;
+        }
+
+        .actions a:last-child {
+            color: #e53935;
+        }
+
+        .actions a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Todo List</h1>
+
+        <!-- Form to add new todo -->
+        <form action="/add" method="POST">
+            <input type="text" name="task" placeholder="Enter a task" required>
+            <button type="submit">Add</button>
+        </form>
+
+        <!-- List of todos -->
+        <ul>
+            {% for todo in todos %}
+                <li>
+                    {% if todo['done'] %}
+                        <s>{{ todo['task'] }}</s>
+                    {% else %}
+                        <span class="task-text">{{ todo['task'] }}</span>
+                    {% endif %}
+
+                    <span class="actions">
+                        <a href="/toggle/{{ todo['id'] }}">✔ Toggle</a>
+                        <a href="/delete/{{ todo['id'] }}">❌ Delete</a>
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
