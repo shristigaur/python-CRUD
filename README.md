@@ -1,0 +1,1 @@
+detailed CRUD operation in python
